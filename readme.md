@@ -20,3 +20,11 @@
      height="320px" width="480px"/>
 </div>
 
+### Generar documentacion Doxygen
+
+<p>Se necesita tener Doxygen instalado en su sistema. Para generar la documentacion del codigo ejeecute el siguiente codigo.</p>
+
+```
+    doxygen doc_config
+ ```
+
