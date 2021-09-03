@@ -30,3 +30,17 @@ typedef enum
     
    SIMO_OK   /*!<  La funcion retorno exitosamente */
 }status_t;
+
+
+
+
+
+
+
+/*! Estructura de datos para almacenar o transmitir datos*/
+
+
+typedef struct
+{
+  char* buffer;    //buffer del sistema
+} frame_t;

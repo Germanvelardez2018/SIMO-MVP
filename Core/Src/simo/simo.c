@@ -1,9 +1,5 @@
 
 
-
-
-
-
 #include "simo/simo.h"
 
 

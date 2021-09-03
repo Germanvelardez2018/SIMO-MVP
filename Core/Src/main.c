@@ -4,7 +4,8 @@
  * 
  * **/
 #include "main.h"
-#include "simo/simo.h"
+
+#include "simo/gpio/gpio.h"
 
 
 
@@ -21,23 +22,28 @@ int main(void)
 {
 
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+
   HAL_Init();
 
 
-  /* Configure the system clock */
-  SystemClock_Config();
+ SystemClock_Config();
 
 
 
-/*Inicia el sistema simo*/
-  init_simo();
+
+
+  uint8_t counter = 0;
+  gpio_init(B2,OUTPUT_PIN);
+  //gpio_init(A13,INPUT_PIN);
+  //gpio_init(A14,INPUT_PIN);
 
   while (1)
   {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+    counter ++;
+    HAL_Delay(200);
+    gpio_write(B2,PIN_HIGH);
+    HAL_Delay(200);
+    gpio_write(B2,PIN_LOW);
   }
   /* USER CODE END 3 */
 }
