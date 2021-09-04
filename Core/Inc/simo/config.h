@@ -17,3 +17,4 @@
 
 #define N_QUEUE_COMM               5
 #define TIMEOUT                    20
+#define N_TIMERS_MAX               5

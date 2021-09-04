@@ -8,9 +8,11 @@
 */
 
 
-#ifndef _SIMO_CORE_
-#define _SIMO_CORE_
-#include "simo/core.h"
+#ifndef SIMO_CORE_H
+
+  #include "simo/core.h"
+  #define SIMO_CORE_H 
+
 #endif
 
 

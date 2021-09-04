@@ -5,13 +5,53 @@
  * **/
 #include "main.h"
 
-#include "simo/gpio/gpio.h"
 
+
+#include "FreeRTOSConfig.h"
+
+#include "FreeRTOS.h"
+
+#include "task.h"
+
+#include "simo/gpio/gpio.h"
+#include "simo/timer/timer.h"
 
 
 void SystemClock_Config(void);
 
 
+
+
+
+
+
+static void _pin_test(void* params)
+{
+
+
+   
+   gpio_write(B2,PIN_HIGH);
+   vTaskDelay(50);
+   gpio_write(B2,PIN_LOW);
+ 
+
+  
+}
+
+
+static void _nothing(void* params)
+{
+
+  
+  while(1)
+  {
+    //  gpio_write(B2,PIN_HIGH);
+      vTaskDelay(250);
+     // gpio_write(B2,PIN_LOW);
+      vTaskDelay(150);
+
+  }
+}
 
 
 /**
@@ -21,6 +61,7 @@ void SystemClock_Config(void);
 int main(void)
 {
 
+static soft_timer_t timer_led;
 
 
   HAL_Init();
@@ -31,19 +72,26 @@ int main(void)
 
 
 
+ gpio_init(B2,OUTPUT_PIN);
 
-  uint8_t counter = 0;
-  gpio_init(B2,OUTPUT_PIN);
-  //gpio_init(A13,INPUT_PIN);
-  //gpio_init(A14,INPUT_PIN);
+ 
+
+
+
+  set_timer_function(&timer_led,_pin_test,1000,1);
+
+  start_timer(&timer_led);
+  //xTaskCreate(_nothing,"nothing",configMINIMAL_STACK_SIZE*2, NULL,tskIDLE_PRIORITY+1,0);
+
+	vTaskStartScheduler();
+
 
   while (1)
   {
-    counter ++;
-    HAL_Delay(200);
-    gpio_write(B2,PIN_HIGH);
-    HAL_Delay(200);
-    gpio_write(B2,PIN_LOW);
+  
+    vTaskDelay(200);
+    
+
   }
   /* USER CODE END 3 */
 }

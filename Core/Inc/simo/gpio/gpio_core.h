@@ -1,6 +1,5 @@
 
 #include "simo/config.h"
-#include "simo/core.h"
 #include "stm32f1xx_hal.h"
 #include "stm32f1xx_hal_gpio.h"
 

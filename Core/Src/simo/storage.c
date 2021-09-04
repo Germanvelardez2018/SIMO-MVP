@@ -1,3 +1,14 @@
+
+/**
+  @file storage.c
+  @brief Funciones para iniciar el sistema
+  @author German Velardez
+  @date 9/2021
+
+
+*/
+
+
 #include "simo/storage.h"
 
 

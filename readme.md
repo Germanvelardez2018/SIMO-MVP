@@ -42,3 +42,12 @@
 
  
 
+### Generar documentacion
+<p>
+ Para generar la documentacion del sistema ejecute el siguiente comando:
+
+```
+
+     doxygen doc_config
+```
+</p>

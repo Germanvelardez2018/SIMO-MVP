@@ -10,6 +10,7 @@
 
 
 /*! Modos de funcionamiento del sistema */
+
 typedef enum{
 
     
@@ -29,6 +30,7 @@ typedef enum
    SIMO_FAIL,   /*!< La funcion fallo */
     
    SIMO_OK   /*!<  La funcion retorno exitosamente */
+   
 }status_t;
 
 
